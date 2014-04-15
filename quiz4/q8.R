@@ -1,0 +1,11 @@
+n <- 10000
+ctl <- rnorm( n )
+trt <- rnorm( n )
+group <- gl( 2, n, 2 * n, labels = c( "A","B" ) )
+weight <- c( ctl, trt )
+library( datasets )
+Rprof( interval=0.001 )
+#Rprof()
+fit <- lm( weight ~ group )
+Rprof( NULL )
+summaryRprof()
