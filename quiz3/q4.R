@@ -1,0 +1,5 @@
+library( datasets )
+data( mtcars )
+m4 <- mean( mtcars$hp[ mtcars$cyl == 4 ] )
+m8 <- mean( mtcars$hp[ mtcars$cyl == 8 ] )
+abs( m4 - m8 )
